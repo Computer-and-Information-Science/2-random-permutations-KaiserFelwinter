@@ -3,8 +3,8 @@
 #include "permutations.h"
 #include "randint.h"
 #include <cstddef>
-#include <iostream>
-using namespace std;
+
+
 
 // A sequential search function, for your convenience.
 // Parameters:
