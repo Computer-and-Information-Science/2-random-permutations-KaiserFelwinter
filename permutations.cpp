@@ -73,14 +73,14 @@ void permutations3 (int array[], size_t size){
     int rand;
     for(int i = 0; i < size; ++i){
         array[i] = i + 1;
-        cout << array[i] << endl;
+        
 
         
     }
 
     for(int j = 0; j < size; ++j){
             rand = randint(0,size-1);
-            cout << rand << endl;
+           
             array[j] = array[rand];
         }
 
