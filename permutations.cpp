@@ -24,7 +24,31 @@ static size_t search (const int array[], size_t size, int target) {
 }
 
 void permutations1 (int array[], size_t size) {
-    // TODO: Implement algorithm #1 here
+   int rand;
+    for(int i; i < size-1; ++i){
+        rand = randint(size);
+        if(search (array[],size, rand) =! array[i]){
+        array[i] = rand;
+        }
+        else
+        {
+            return;
+        }
+    }
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
 }
 
 void permutations2 (int array[], size_t size) {
