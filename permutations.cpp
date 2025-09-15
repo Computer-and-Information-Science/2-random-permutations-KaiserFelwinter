@@ -1,8 +1,10 @@
-// YOUR NAME HERE
+// Kalonji George
 
 #include "permutations.h"
 #include "randint.h"
 #include <cstddef>
+#include <iostream>
+using namespace std;
 
 // A sequential search function, for your convenience.
 // Parameters:
@@ -25,36 +27,73 @@ static size_t search (const int array[], size_t size, int target) {
 
 void permutations1 (int array[], size_t size) {
    int rand;
-    for(int i; i < size-1; ++i){
-        rand = randint(size);
-        if(search (array[],size, rand) =! array[i]){
-        array[i] = rand;
-        }
-        else
+
+    for(size_t i = 0; i < size; ++i){
+        do
         {
-            return;
+        rand = randint(size);
+        
+        }
+        while(search(array,size,rand) < i);
+        {
+        array[i] = rand;
+        
+        }
+        
         }
     }
 
 
 
-   
 
-
-
-
-
-
-
-
-
-
-}
 
 void permutations2 (int array[], size_t size) {
-    // TODO: Implement algorithm #2 here
+   int rand;
+   bool *used = new bool[size];
+   
+    for(size_t i = 0; i < size; ++i){
+        do
+        {
+        rand = randint(size);
+        
+        }
+        while(used[rand-1] == true);{
+            array[i] = rand;
+            used[rand - 1] = true; 
+        }
+
 }
 
-void permutations3 (int array[], size_t size) {
-    // TODO: Implement algorithm #3 here
+delete [] used;
+
+
+
+}
+void permutations3 (int array[], size_t size){
+    int rand;
+    for(int i = 0; i < size; ++i){
+        array[i] = i + 1;
+        cout << array[i] << endl;
+
+        
+    }
+
+    for(int j = 0; j < size; ++j){
+            rand = randint(0,size-1);
+            cout << rand << endl;
+            array[j] = array[rand];
+        }
+
+return;
+
+
+
+
+
+
+
+
+
+
+
 }
